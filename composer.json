@@ -3,6 +3,7 @@
     "description": "OneDrive SDK for PHP.",
     "homepage": "https://github.com/krizalys/onedrive-php-sdk",
     "license": "BSD-3-Clause",
+    "minimum-stability": "dev"
     "prefer-stable": true,
     "keywords": [
         "krizalys",
