@@ -1,0 +1,63 @@
+{
+  "version": "0.0.11",
+  "private": true,
+  "author": "Hyperledger Composer",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "node info",
+    "preinstall": "npm install -g cordova",
+    "postinstall": "npm run pkgcheck && npm run bootstrap",
+    "bootstrap": "git submodule init && git submodule update && lerna bootstrap",
+    "pretest": "npm run licchk",
+    "test": "lerna run test",
+    "pkgcheck": "node ./scripts/pkgcheck.js",
+    "pkgstamp": "node ./scripts/pkgstamp.js",
+    "pkgbump": "node ./scripts/pkgbump.js && node ./scripts/pkgcheck.js --fix",
+    "licchk": "license-check-and-add"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "lerna": "^2.0.0",
+    "moment": "^2.18.1",
+    "semver": "^5.4.1",
+    "license-check-and-add": "~2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jordanG73/onedrive-php-sdk.git"
+  },
+  "license-check-and-add-config": {
+    "folder": ".",
+    "license": "LICENSE.txt",
+    "exact_paths_method": "EXCLUDE",
+    "exact_paths": [
+      ".git",
+      "node_modules",
+      "packages",
+      ".travis/fix_github_https_repo.sh",
+      "markdown-license.txt",
+      "fabric-tools"
+    ],
+    "file_type_method": "EXCLUDE",
+    "file_types": [
+      ".cfg",
+      ".deb",
+      ".enc",
+      ".log",
+      ".md",
+      ".yml"
+    ],
+    "insert_license": false,
+    "license_formats": {
+      "js": {
+        "prepend": "/*",
+        "append": " */",
+        "eachLine": {
+          "prepend": " * "
+        }
+      }
+    }
+  }
+}
